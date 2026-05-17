@@ -1,110 +1,174 @@
-# 📈 Infosys & IFRS Multi-Document Financial Analyst Chatbot
+# 📈 Infosys Financial Analyst Chatbot
 
-An advanced, agentic financial analyst chatbot built with **Streamlit**, **LangChain/LangGraph**, and **Google Gemini** that processes and reasons across multiple structured and unstructured financial data sources. It is specifically designed to handle **Infosys Annual Reports (PDFs)**, **IFRS Press Releases (PDFs)**, **Investor Sheets (Excel)**, and **Stock Price History (CSV)**.
+This project is a financial analyst chatbot built using Streamlit, LangChain, FAISS, and Google Gemini API. It can answer financial questions from multiple Infosys financial documents including annual reports, quarterly IFRS press releases, investor sheets, and stock market data.
 
----
-
-## 🚀 Key Features
-
-* **Multi-Format Data Loader**: Seamlessly ingests PDFs, Excel spreadsheets, and raw CSV files.
-* **Agentic Routing (LangGraph)**: An autonomous AI agent architecture that routes financial queries dynamically to semantic vector stores, automated reporting tools, or custom data extraction paths.
-* **Local Embeddings & FAISS Vector Store**: Uses Sentence-Transformers to construct high-quality, local vector embeddings, storing them in a local FAISS index for high-performance retrieval.
-* **Interactive Conversational UI**: Built with Streamlit, supporting persistent chat history, document parsing status, and contextual dialogue.
-* **On-the-fly Report Generation**: Automatically compiles complex financial queries into downloadable **PDF reports** or **Excel sheets** saved directly to the outputs folder.
+The chatbot supports conversational queries, document citations, follow-up questions, and automatic report generation in PDF or Excel format.
 
 ---
 
-## 📂 Project Structure
+# Features
+
+- Supports multiple document formats:
+  - PDF
+  - Excel
+  - CSV
+
+- Answers questions across all uploaded financial documents
+
+- Uses FAISS vector database for semantic search
+
+- Handles follow-up questions using conversation memory
+
+- Shows source documents used to generate answers
+
+- Generates:
+  - PDF reports for summaries
+  - Excel sheets for tabular financial data
+
+- Simple Streamlit chat interface
+
+---
+
+# Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Backend |
+| Streamlit | User Interface |
+| LangChain | RAG Pipeline |
+| Google Gemini API | LLM |
+| FAISS | Vector Database |
+| Pandas | Excel/CSV Processing |
+| ReportLab | PDF Generation |
+
+---
+
+# Project Structure
 
 ```text
 financial-chatbot/
 │
-├── app.py                      # Streamlit application UI & configuration
-├── requirements.txt            # Project python dependencies
-├── .env.example                # Sample environment configuration file
-├── .gitignore                  # Git ignore rules for virtual environments, API keys, etc.
+├── app.py
+├── requirements.txt
+├── .env.example
+├── .gitignore
 │
-├── data/                       # [Git Ignored] Place raw financial reports & sheets here
+├── data/
 │   ├── infosys-ar-25.pdf
 │   ├── ifrs-usd-press-release_q1.pdf
+│   ├── ifrs-usd-press-release_q2.pdf
+│   ├── ifrs-usd-press-release_q3.pdf
+│   ├── ifrs-usd-press-release_q4.pdf
 │   ├── investor-sheet.xls
 │   └── 500209.csv
 │
-├── modules/                    # Core backend system modules
-│   ├── loader.py               # Document loading utilities (PDF, XLS, CSV)
-│   ├── vectorstore.py          # Embedding generation & local FAISS indexing
-│   ├── chatbot.py              # LangGraph Agent setup & tool configurations
-│   ├── report_generator.py     # Automated PDF/Excel report generators
-│   └── utils.py                # Helper utilities
+├── modules/
+│   ├── loader.py
+│   ├── vectorstore.py
+│   ├── chatbot.py
+│   ├── report_generator.py
+│   └── utils.py
 │
-└── outputs/                    # [Git Ignored] Directory where generated PDF/XLS reports are saved
+└── outputs/
 ```
 
 ---
 
-## 🛠️ Setup & Installation
+# Setup Instructions
 
-Follow these steps to set up the project on your local machine:
+## 1. Clone Repository
 
-### 1. Clone the Repository
 ```bash
 git clone https://github.com/MauryaShubhamkumar/infosys-financial-chatbot.git
+
 cd infosys-financial-chatbot
 ```
 
-### 2. Set Up a Python Virtual Environment
-Initialize and activate your environment:
+---
 
-* **On Windows (PowerShell):**
-  ```powershell
-  python -m venv venv
-  .\venv\Scripts\Activate.ps1
-  ```
-  *(If you hit script execution policy issues, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` first)*
+## 2. Create Virtual Environment
 
-* **On macOS/Linux/Git Bash:**
-  ```bash
-  python3 -m venv venv
-  source venv/Scripts/activate
-  ```
+### Windows
 
-### 3. Install Dependencies
-Ensure you have the virtual environment active, then run:
+```powershell
+python -m venv venv
+
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
-Create a file named `.env` in the root folder of the project:
+---
+
+## 4. Add Gemini API Key
+
+Create a `.env` file in the root folder:
 
 ```env
-GOOGLE_API_KEY=your_gemini_api_key_here
+GOOGLE_API_KEY=your_api_key_here
 ```
 
----
+Get API key from:
 
-## 📥 Ingesting Data
-
-Since the input documents are heavy and contain proprietary financial information, the `data/` directory is **git-ignored**. You must place your source files inside the `data/` folder before launching:
-
-1. Create a `data/` directory in the root folder if it doesn't already exist.
-2. Put the following documents inside `data/`:
-   * Infosys Annual Report (e.g., `infosys-ar-25.pdf`)
-   * IFRS Quarterly Press Releases (`ifrs-usd-press-release_q1.pdf` to `q4.pdf`)
-   * Investor Sheet (`investor-sheet.xls`)
-   * Stock history CSV (`500209.csv`)
+https://aistudio.google.com/app/apikey
 
 ---
 
-## 🏃 Running the Application
+# Add Financial Documents
 
-To launch the interactive dashboard:
+Create a `data/` folder and place all required financial files inside it:
+
+- Annual Report PDF
+- Quarterly IFRS PDFs
+- Investor Excel Sheet
+- Stock CSV File
+
+---
+
+# Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-### In-App Execution Steps:
-1. In the sidebar, click the **Process Documents** button to parse all PDFs, Excel, and CSV files, build the local embeddings, and create the FAISS index.
-2. Once the processing is complete, you can start chatting with your AI Senior Financial Analyst in the main window!
-3. Request detailed PDF summaries or data extractions, and the agent will generate them and provide direct download links right inside the chat window.
+---
+
+# How It Works
+
+1. Documents are loaded from PDFs, Excel, and CSV files
+2. Text is split into smaller chunks
+3. Embeddings are generated using Gemini Embeddings
+4. FAISS stores document vectors locally
+5. Relevant chunks are retrieved based on user queries
+6. Gemini generates final responses using retrieved context
+
+---
+
+# Example Questions
+
+- What was Infosys revenue growth in FY26?
+- Compare Q1 and Q4 performance
+- What were the major client wins in Q3?
+- Summarize annual financial performance
+- Compare operating margins across all quarters
+
+---
+
+# Author
+
+Shubham KUmar Maurya  
+B.Tech CSE, IIT Jammu
