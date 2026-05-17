@@ -17,6 +17,7 @@ venv.bak/
 # Environment variables / Secrets (CRITICAL: Never commit API keys!)
 .env
 .env.*
+!.env.example
 .secrets
 
 # Streamlit config/cache
