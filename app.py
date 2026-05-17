@@ -60,7 +60,7 @@ if os.path.exists("faiss_index"):
                         btn_label = "📄 Download PDF Report" if file_path.endswith(".pdf") else "📊 Download Excel Data"
                         st.download_button(label=btn_label, data=f, file_name=os.path.basename(file_path), key=f"dl_{msg['content'][:10]}")
 
-    # React to user input
+    # React to user input when input is given 
     if prompt := st.chat_input("Ask a financial question or request a report..."):
         st.chat_message("user").markdown(prompt)
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -102,4 +102,4 @@ if os.path.exists("faiss_index"):
                 st.session_state.chat_history.append(AIMessage(content=answer))
 
 else:
-    st.info("👈 Please click **Process Documents** in the sidebar to index your data files before chatting.")
+    st.info(" Please click **Process Documents** in the sidebar to index your data files before chatting.")
