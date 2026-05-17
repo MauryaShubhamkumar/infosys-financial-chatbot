@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables / Secrets (CRITICAL: Never commit API keys!)
+.env
+.env.*
+.secrets
+
+# Streamlit config/cache
+.streamlit/
+
+# Local Vector Database (FAISS index files)
+faiss_index/
+
+# Generated outputs & reports (PDF, Excel)
+outputs/
+
+# Raw and input data files
+data/
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
