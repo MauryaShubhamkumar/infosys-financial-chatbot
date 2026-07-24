@@ -1,25 +1,29 @@
+import json
+import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
 from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage
 from modules.report_generator import generate_pdf, generate_excel
-import json
+from modules.vectorstore import get_embeddings, load_faiss_index
 
+
+@st.cache_resource(show_spinner=False)
 def load_chatbot():
+    """
+    Loads and caches the financial analyst agent and retriever.
+    Cached using @st.cache_resource to prevent redundant model/agent initialization.
+    """
+    vectorstore = load_faiss_index("faiss_index")
+    if vectorstore is None:
+        embeddings = get_embeddings()
+        from langchain_community.vectorstores import FAISS
+        vectorstore = FAISS.load_local(
+            "faiss_index",
+            embeddings,
+            allow_dangerous_deserialization=True
+        )
 
-    # Must match the local model used in vectorstore.py
-    embeddings = HuggingFaceEmbeddings(
-        model_name="all-MiniLM-L6-v2"
-    )
-
-    vectorstore = FAISS.load_local(
-        "faiss_index",
-        embeddings,
-        allow_dangerous_deserialization=True
-    )
-    
     retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
 
     # Tool 1: Document Search
