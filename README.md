@@ -1,3 +1,9 @@
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mauryashubhamkumar-infosys-financial-chatbot-app-06jhoe.streamlit.app/)
+
+🔗 **Live Demo**: [https://mauryashubhamkumar-infosys-financial-chatbot-app-06jhoe.streamlit.app/](https://mauryashubhamkumar-infosys-financial-chatbot-app-06jhoe.streamlit.app/)
+
+
+
 # 📈 Financial Analyst Chatbot
 
 This project is a deployment-ready AI Financial Analyst Chatbot built using Streamlit, LangChain, FAISS, and Google Gemini API. Users can upload their own financial documents (PDFs, Excel spreadsheets, and CSV files) via a dedicated sidebar workflow.
