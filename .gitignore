@@ -1,31 +1,39 @@
-# Python
+# Python Bytecode & Cache
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 
-# Virtual Environment
+# Virtual Environments
 venv/
 .venv/
+env/
+ENV/
 
-# Environment Variables
+# Environment Variables & Secrets
 .env
+.env.*
+!.env.example
+.streamlit/secrets.toml
 
-# Uploaded Files
+# User Uploaded Documents
 uploads/
 
-# Generated Reports
-reports/
-
-# Vector Database
+# Vector Database Index & Metadata
+faiss_index/
 vector_store/
-
-# Cache
 cache/
 
-# IDE
+# Generated Output Reports (PDF & Excel)
+outputs/
+reports/
+
+# IDE & Editor Settings
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# OS
+# OS-Specific Files
 .DS_Store
 Thumbs.db
+ehthumbs.db

@@ -37,7 +37,7 @@
         "ifrs-usd-press-release_q1.pdf_chunk_28"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "ifrs-usd-press-release_q2.pdf": {
       "file_name": "ifrs-usd-press-release_q2.pdf",
@@ -77,7 +77,7 @@
         "ifrs-usd-press-release_q2.pdf_chunk_58"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "ifrs-usd-press-release_q3.pdf": {
       "file_name": "ifrs-usd-press-release_q3.pdf",
@@ -122,7 +122,7 @@
         "ifrs-usd-press-release_q3.pdf_chunk_93"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "ifrs-usd-press-release_q4.pdf": {
       "file_name": "ifrs-usd-press-release_q4.pdf",
@@ -166,7 +166,7 @@
         "ifrs-usd-press-release_q4.pdf_chunk_127"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "infosys-ar-25.pdf": {
       "file_name": "infosys-ar-25.pdf",
@@ -1781,7 +1781,7 @@
         "infosys-ar-25.pdf_chunk_1732"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "investor-sheet.xls": {
       "file_name": "investor-sheet.xls",
@@ -1796,7 +1796,7 @@
         "investor-sheet.xls_chunk_1737"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     },
     "500209.csv": {
       "file_name": "500209.csv",
@@ -1868,7 +1868,7 @@
         "500209.csv_chunk_1799"
       ],
       "status": "indexed",
-      "indexed_timestamp": "25 Jul 2026 12:04 AM"
+      "indexed_timestamp": "25 Jul 2026 10:17 AM"
     }
   }
 }

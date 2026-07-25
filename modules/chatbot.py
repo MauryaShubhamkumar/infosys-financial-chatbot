@@ -1,3 +1,4 @@
+import os
 import json
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -58,8 +59,10 @@ def load_chatbot():
 
     tools = [search_financial_documents, create_pdf_report, create_excel_report]
 
+    model_name = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model=model_name,
         temperature=0.2
     )
 
