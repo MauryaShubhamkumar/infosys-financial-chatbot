@@ -136,6 +136,16 @@ streamlit run app.py
 
 ---
 
+# Example Questions
+
+- What was Infosys revenue growth in FY26?
+- Compare Q1 and Q4 performance
+- What were the major client wins in Q3?
+- Summarize annual financial performance
+- Compare operating margins across all quarters
+
+---
+
 # Author
 
 Shubham Kumar Maurya  
